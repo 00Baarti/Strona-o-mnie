@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f5f8fa;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #004d99;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 3px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffcc00;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffcc00;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+#darkModeToggle {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  transform: rotate(20deg);
+}
+
+main {
+  flex-grow: 1;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #004d99;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.skills-list {
+  list-style: disc inside;
+  color: #444;
+  font-weight: 600;
+}
+
+.project {
+  background-color: #e6f7ff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.project:hover {
+  background-color: #b3e5fc;
+}
+
+.project h3 {
+  margin-top: 0;
+  color: #007acc;
+}
+
+.btn-link {
+  display: inline-block;
+  margin-top: 0.7rem;
+  text-decoration: none;
+  color: #004d99;
+  font-weight: 600;
+  border: 2px solid #004d99;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-link:hover {
+  background-color: #004d99;
+  color: white;
+}
+
+form label {
+  display: block;
+  margin: 1rem 0 0.4rem;
+  font-weight: 600;
+  color: #004d99;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #007acc;
+  outline: none;
+}
+
+.error-message {
+  color: #d93025;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  height: 1.1em;
+}
+
+form button {
+  margin-top: 1.5rem;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #004d99;
+}
+
+#formMessage {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: #007acc;
+}
+
+/* Animacje fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.dark-mode {
+  background: #121212;
+  color: #e1e1e1;
+}
+
+body.dark-mode header {
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-mode .nav-link {
+  color: #eee;
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+  color: #ffd700;
+}
+
+body.dark-mode .card {
+  background: #1e1e1e;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
+}
+
+body.dark-mode .project {
+  background-color: #333;
+}
+
+body.dark-mode form label {
+  color: #ffd700;
+}
+
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background-color: #222;
+  border-color: #555;
+  color: #eee;
+}
+
+body.dark-mode form input:focus,
+body.dark-mode form textarea:focus {
+  border-color: #ffd700;
+}
+
+body.dark-mode form button {
+  background-color: #ffd700;
+  color: #121212;
+}
+
+body.dark-mode form button:hover {
+  background-color: #e6c200;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #004d99;
+  color: white;
+  font-size: 0.9rem;
+  margin-top: auto;
+}

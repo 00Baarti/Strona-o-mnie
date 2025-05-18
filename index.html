@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>00Baarti</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">00Baarti</div>
+      <ul class="nav-links">
+        <li><a href="#o-mnie" class="nav-link">O mnie</a></li>
+        <li><a href="#umiejetnosci" class="nav-link">Umiejętności</a></li>
+        <li><a href="#projekty" class="nav-link">Projekty</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+      <button id="darkModeToggle" aria-label="Przełącz tryb ciemny">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="o-mnie" class="fade-in section card">
+      <h1>Cześć! Jestem Technik Programista z edukacją strażacką</h1>
+      <p>
+        Jestem z szkoły ZDZ z tytułem technik programista. Dodatkowo zdobyłem edukację strażacką, co daje mi unikalne kompetencje w zarządzaniu sytuacjami awaryjnymi i pracy zespołowej.
+      </p>
+    </section>
+
+    <section id="umiejetnosci" class="fade-in section card">
+      <h2>Moje umiejętności</h2>
+      <ul class="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java (programowanie obiektowe, aplikacje desktopowe)</li>
+        <li>Podstawy bazy danych SQL</li>
+        <li>Podstawy Git i GitHub</li>
+        <li>Znajomość środowisk Minecraft (pluginy Spigot, Bukkit)</li>
+      </ul>
+    </section>
+
+    <section id="projekty" class="fade-in section card">
+      <h2>Projekty</h2>
+      <div class="project">
+        <h3>Gold-ChatControl</h3>
+        <p>Plugin do Minecrafta kontrolujący chat, dodający zaawansowane funkcje i zabezpieczenia.</p>
+        <a href="https://github.com/twoj-github/Gold-ChatControl" target="_blank" rel="noopener noreferrer" class="btn-link">
+          Zobacz na GitHub
+        </a>
+      </div>
+    </section>
+
+    <section id="kontakt" class="fade-in section card">
+      <h2>Kontakt</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required minlength="2" />
+        <span class="error-message" aria-live="polite"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <span class="error-message" aria-live="polite"></span>
+
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
+        <span class="error-message" aria-live="polite"></span>
+
+        <button type="submit">Wyślij</button>
+        <div id="formMessage" role="alert" aria-live="assertive"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 00Baarti | DC.GOLD-PLUGINS.PL</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
